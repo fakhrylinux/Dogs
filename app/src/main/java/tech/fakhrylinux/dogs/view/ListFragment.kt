@@ -44,7 +44,7 @@ class ListFragment : Fragment() {
             bd.dogsList.visibility = View.GONE
             bd.listError.visibility = View.GONE
             bd.loadingView.visibility = View.VISIBLE
-            viewModel.refresh()
+            viewModel.refreshBypassCache()
             bd.refreshLayout.isRefreshing = false
         }
 
