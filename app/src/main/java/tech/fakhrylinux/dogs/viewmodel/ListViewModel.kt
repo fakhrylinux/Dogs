@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 import tech.fakhrylinux.dogs.model.DogBreed
 import tech.fakhrylinux.dogs.model.DogDatabase
 import tech.fakhrylinux.dogs.model.DogsApiService
+import tech.fakhrylinux.dogs.util.NotificationsHelper
 import tech.fakhrylinux.dogs.util.SharedPreferencesHelper
 
 class ListViewModel(application: Application) : BaseViewModel(application) {
@@ -59,9 +60,11 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
                     override fun onSuccess(dogList: List<DogBreed>) {
                         storeDogsLocally(dogList)
                         Toast.makeText(
-                            getApplication(), "Dogs retrieved from endpoint", Toast.LENGTH_SHORT
-                        )
-                            .show()
+                            getApplication(),
+                            "Dogs retrieved from endpoint",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        NotificationsHelper(getApplication()).createNotification()
                     }
 
                     override fun onError(e: Throwable) {
