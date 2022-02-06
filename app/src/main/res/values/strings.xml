@@ -6,4 +6,6 @@
     <string name="an_error_occured_while_loading_data">An error occured while loading data</string>
     <string name="dogname">DogName</string>
     <string name="lifespan">Lifespan</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="share">Share</string>
 </resources>

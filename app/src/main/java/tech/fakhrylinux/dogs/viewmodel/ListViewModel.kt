@@ -38,7 +38,6 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
 
     private fun checkCacheDuration() {
         val cachePreference = prefHelper.getCacheDuration()
-
         try {
             val cachePreferenceInt = cachePreference?.toInt() ?: 5 * 60
             refreshTime = cachePreferenceInt.times(1000 * 1000 * 1000L)
